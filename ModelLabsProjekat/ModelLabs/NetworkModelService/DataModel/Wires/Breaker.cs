@@ -19,7 +19,7 @@ namespace FTN.Services.NetworkModelService.DataModel.Wires
 			if (base.Equals(obj))
 			{
 				Breaker x = (Breaker)obj;
-				return (x.inTransitTime == this.inTransitTime));
+				return (x.inTransitTime == this.inTransitTime);
 			}
 			else
 			{

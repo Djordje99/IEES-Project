@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:cim="http://iec.ch/TC57/2010/CIM-schema-cim15#"
+	xmlns:ftn="http://www.ftnydro.com/CIM15/2010/extension#">
+	
+	<!--RegularTimePoint-->
+	<cim:RegularTimePoint rdf:ID="RTP_001">
+		<cim:RegularTimePoint.sequenceNumber>3</cim:RegularTimePoint.sequenceNumber>
+		<cim:RegularTimePoint.value1>4.1</cim:RegularTimePoint.value1>
+		<cim:RegularTimePoint.value2>2.5</cim:RegularTimePoint.value2>
+		<cim:IdentifiedObject.aliasName>RTP_001_aliasName</cim:IdentifiedObject.aliasName>
+		<cim:IdentifiedObject.mRID>RTP_001_mRID</cim:IdentifiedObject.mRID>
+		<cim:IdentifiedObject.name>RTP_001_name</cim:IdentifiedObject.name>
+	</cim:RegularTimePoint>
+	<cim:RegularTimePoint rdf:ID="RTP_002">
+		<cim:RegularTimePoint.sequenceNumber>4</cim:RegularTimePoint.sequenceNumber>
+		<cim:RegularTimePoint.value1>2.6</cim:RegularTimePoint.value1>
+		<cim:RegularTimePoint.value2>7.3</cim:RegularTimePoint.value2>
+		<cim:IdentifiedObject.aliasName>RTP_002_aliasName</cim:IdentifiedObject.aliasName>
+		<cim:IdentifiedObject.mRID>RTP_002_mRID</cim:IdentifiedObject.mRID>
+		<cim:IdentifiedObject.name>RTP_002_name</cim:IdentifiedObject.name>
+	</cim:RegularTimePoint>
+	<cim:RegularTimePoint rdf:ID="RTP_003">
+		<cim:RegularTimePoint.sequenceNumber>6</cim:RegularTimePoint.sequenceNumber>
+		<cim:RegularTimePoint.value1>1.2</cim:RegularTimePoint.value1>
+		<cim:RegularTimePoint.value2>4.7</cim:RegularTimePoint.value2>
+		<cim:IdentifiedObject.aliasName>RTP_003_aliasName</cim:IdentifiedObject.aliasName>
+		<cim:IdentifiedObject.mRID>RTP_003_mRID</cim:IdentifiedObject.mRID>
+		<cim:IdentifiedObject.name>RTP_003_name</cim:IdentifiedObject.name>
+	</cim:RegularTimePoint>
+	
+	<!--DayType-->
+	<cim:DayType rdf:ID="DayType_001">
+		<cim:IdentifiedObject.aliasName>DayType_001_aliasName</cim:IdentifiedObject.aliasName>
+		<cim:IdentifiedObject.mRID>DayType_001_mRID</cim:IdentifiedObject.mRID>
+		<cim:IdentifiedObject.name>DayType_001_name</cim:IdentifiedObject.name>
+	</cim:DayType>
+		<cim:DayType rdf:ID="DayType_002">
+		<cim:IdentifiedObject.aliasName>DayType_002_aliasName</cim:IdentifiedObject.aliasName>
+		<cim:IdentifiedObject.mRID>DayType_002_mRID</cim:IdentifiedObject.mRID>
+		<cim:IdentifiedObject.name>DayType_002_name</cim:IdentifiedObject.name>
+	</cim:DayType>
+		<cim:DayType rdf:ID="DayType_003">
+		<cim:IdentifiedObject.aliasName>DayType_003_aliasName</cim:IdentifiedObject.aliasName>
+		<cim:IdentifiedObject.mRID>DayType_003_mRID</cim:IdentifiedObject.mRID>
+		<cim:IdentifiedObject.name>DayType_003_name</cim:IdentifiedObject.name>
+	</cim:DayType>
+		<cim:DayType rdf:ID="DayType_004">
+		<cim:IdentifiedObject.aliasName>DayType_004_aliasName</cim:IdentifiedObject.aliasName>
+		<cim:IdentifiedObject.mRID>DayType_004_mRID</cim:IdentifiedObject.mRID>
+		<cim:IdentifiedObject.name>DayType_004_name</cim:IdentifiedObject.name>
+	</cim:DayType>
+	
+	<!--Season-->
+	<cim:Season rdf:ID="Season_001">
+		<cim:Season.endDate>2021-06-15T13:45:30.0900000</cim:Season.endDate>
+		<cim:Season.startDate>2009-06-14T13:45:30.0900000</cim:Season.startDate>
+		<cim:IdentifiedObject.aliasName>Season_001_aliasName</cim:IdentifiedObject.aliasName>
+		<cim:IdentifiedObject.mRID>Season_001_mRID</cim:IdentifiedObject.mRID>
+		<cim:IdentifiedObject.name>Season_001_name</cim:IdentifiedObject.name>
+	</cim:Season>
+		<cim:Season rdf:ID="Season_002">
+		<cim:Season.endDate>2021-05-15T13:45:30.0900000</cim:Season.endDate>
+		<cim:Season.startDate>2009-05-14T13:45:30.0900000</cim:Season.startDate>
+		<cim:IdentifiedObject.aliasName>Season_002_aliasName</cim:IdentifiedObject.aliasName>
+		<cim:IdentifiedObject.mRID>Season_002_mRID</cim:IdentifiedObject.mRID>
+		<cim:IdentifiedObject.name>Season_002_name</cim:IdentifiedObject.name>
+	</cim:Season>
+		<cim:Season rdf:ID="Season_003">
+		<cim:Season.endDate>2021-06-12T13:45:30.0900000</cim:Season.endDate>
+		<cim:Season.startDate>2009-06-11T13:45:30.0900000</cim:Season.startDate>
+		<cim:IdentifiedObject.aliasName>Season_003_aliasName</cim:IdentifiedObject.aliasName>
+		<cim:IdentifiedObject.mRID>Season_003_mRID</cim:IdentifiedObject.mRID>
+		<cim:IdentifiedObject.name>Season_003_name</cim:IdentifiedObject.name>
+	</cim:Season>
+	
+	<!--Breaker-->
+		<cim:Breaker rdf:ID="Breaker_001">
+		<cim:Breaker.inTransitTime>5.5</cim:Breaker.inTransitTime>
+		<cim:ProtectedSwitch.breakingCapacity>80.2</cim:ProtectedSwitch.breakingCapacity>
+		<cim:Switch.normalOpen>true</cim:Switch.normalOpen>
+		<cim:Switch.ratedCurrent>43.1</cim:Switch.ratedCurrent>
+		<cim:Switch.retained>false</cim:Switch.retained>
+		<cim:Switch.switchOnCount>20</cim:Switch.switchOnCount>
+		<cim:Switch.switchOnDate>2009-06-11T13:45:30.0900000</cim:Switch.switchOnDate>
+		<cim:Equipment.aggregate>false</cim:Equipment.aggregate>
+		<cim:Equipment.normallyInService>true</cim:Equipment.normallyInService>
+		<cim:IdentifiedObject.aliasName>Breaker_001_aliasName</cim:IdentifiedObject.aliasName>
+		<cim:IdentifiedObject.mRID>Breaker_001_mRID</cim:IdentifiedObject.mRID>
+		<cim:IdentifiedObject.name>Breaker_001_name</cim:IdentifiedObject.name>
+	</cim:Breaker>
+
+	<!--RegulatingControl-->
+	<cim:RegulatingControl rdf:ID="RC_001">
+		<cim:RegulatingControl.discrete>false</cim:RegulatingControl.discrete>
+		<cim:RegulatingControl.mode>activePower</cim:RegulatingControl.mode>
+		<cim:RegulatingControl.monitoredPhase>A</cim:RegulatingControl.monitoredPhase>
+		<cim:RegulatingControl.targetRange>20000</cim:RegulatingControl.targetRange>
+		<cim:RegulatingControl.targetValue>22000</cim:RegulatingControl.targetValue>
+		<cim:IdentifiedObject.aliasName>RC_001_aliasName</cim:IdentifiedObject.aliasName>
+		<cim:IdentifiedObject.mRID>RC_001_mRID</cim:IdentifiedObject.mRID>
+		<cim:IdentifiedObject.name>RC_001_name</cim:IdentifiedObject.name>
+	</cim:RegulatingControl>
+	
+	<!--RegulationSchedule-->
+	<cim:RegulationSchedule rdf:ID="RS_001">
+		<cim:RegulationSchedule.RegulatingControl rdf:resource="RC_001"/>
+		<cim:SeasonDayTypeSchedule.DayType rdf:resource="DayType_001"/>
+		<cim:SeasonDayTypeSchedule.Season rdf:resource="Season_001"/>
+		<cim:BasicIntervalSchedule.startTime>2021-06-13T13:45:30.0900000</cim:BasicIntervalSchedule.startTime>
+		<cim:BasicIntervalSchedule.value1Unit>A</cim:BasicIntervalSchedule.value1Unit>
+		<cim:IdentifiedObject.aliasName>RS_001_aliasName</cim:IdentifiedObject.aliasName>
+		<cim:IdentifiedObject.mRID>RS_001_mRID</cim:IdentifiedObject.mRID>
+		<cim:IdentifiedObject.name>RS_001_name</cim:IdentifiedObject.name>
+	</cim:RegulationSchedule>
+
+	<!--SwitchSchedule-->
+	<cim:SwitchSchedule rdf:ID="SS_001">
+		<cim:SwitchSchedule.Switch rdf:resource="Breaker_001"/>
+		<cim:SeasonDayTypeSchedule.DayType rdf:resource="DayType_002"/>
+		<cim:SeasonDayTypeSchedule.Season rdf:resource="Season_002"/>
+		<cim:BasicIntervalSchedule.startTime>2021-06-13T13:45:30.0900000</cim:BasicIntervalSchedule.startTime>
+		<cim:BasicIntervalSchedule.value1Unit>A</cim:BasicIntervalSchedule.value1Unit>
+		<cim:IdentifiedObject.aliasName>SS_001_aliasName</cim:IdentifiedObject.aliasName>
+		<cim:IdentifiedObject.mRID>SS_001_mRID</cim:IdentifiedObject.mRID>
+		<cim:IdentifiedObject.name>SS_001_name</cim:IdentifiedObject.name>
+	</cim:SwitchSchedule>
+	
+</rdf:RDF>

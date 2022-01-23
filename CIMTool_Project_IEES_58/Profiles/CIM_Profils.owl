@@ -22,7 +22,7 @@
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="Xd2X2e4eda5cXa3X17e7d4a3a25Xa3X-7fbf">
-    <owl:unionOf rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <owl:unionOf rdf:nodeID="X43X9a65175Xa3X17e86535542Xa3X-7ffe"/>
     <rdfs:label>ratedCurrent</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://iec.ch/TC57/2010/CIM-schema-cim15#CurrentFlow"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
@@ -115,10 +115,20 @@
     <owl:equivalentClass rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
   </rdf:Description>
+  <rdf:Description rdf:nodeID="X43X9a65175Xa3X17e86535542Xa3X-7ffd">
+    <rdfs:label>CurrentFlow</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://iec.ch/TC57/2010/CIM-schema-cim15#CurrentFlow"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
   <rdf:Description rdf:nodeID="Xd2X2e4eda5cXa3X17e7d4a3a25Xa3X-7fcb">
     <rdfs:label>normalOpen</rdfs:label>
     <owl:equivalentClass rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Xd2X2e4eda5cXa3X17e7d4a3a25Xa3X-7fc4">
+    <owl:allValuesFrom rdf:nodeID="Xd2X2e4eda5cXa3X17e7d4a3a25Xa3X-7fc5"/>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/2010/CIM-schema-cim15#Switch.switchOnCount"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="Xd2X2e4eda5cXa3X17e7d4a3a25Xa3X-7fdf">
     <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:minCardinality>
@@ -128,11 +138,6 @@
   <rdf:Description rdf:nodeID="Xd2X2e4eda5cXa3X17e7d4a3a25Xa3X-7ff8">
     <owl:allValuesFrom rdf:nodeID="Xd2X2e4eda5cXa3X17e7d4a3a25Xa3X-7ff9"/>
     <owl:onProperty rdf:resource="http://iec.ch/TC57/2010/CIM-schema-cim15#IdentifiedObject.name"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Xd2X2e4eda5cXa3X17e7d4a3a25Xa3X-7fc4">
-    <owl:allValuesFrom rdf:nodeID="Xd2X2e4eda5cXa3X17e7d4a3a25Xa3X-7fc5"/>
-    <owl:onProperty rdf:resource="http://iec.ch/TC57/2010/CIM-schema-cim15#Switch.switchOnCount"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="Xd2X2e4eda5cXa3X17e7d4a3a25Xa3X-7ffb">
@@ -170,6 +175,7 @@
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="Xd2X2e4eda5cXa3X17e7d4a3a25Xa3X-7fbc">
+    <owl:unionOf rdf:nodeID="X43X9a65175Xa3X17e86535542Xa3X-7ffc"/>
     <rdfs:label>breakingCapacity</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://iec.ch/TC57/2010/CIM-schema-cim15#CurrentFlow"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
@@ -227,6 +233,10 @@
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:subClassOf rdf:nodeID="Xd2X2e4eda5cXa3X17e7d4a3a25Xa3X-7fc7"/>
   </rdf:Description>
+  <rdf:Description rdf:nodeID="X43X9a65175Xa3X17e86535542Xa3X-7ffc">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="X43X9a65175Xa3X17e86535542Xa3X-7ffd"/>
+  </rdf:Description>
   <rdf:Description rdf:about="#Season">
     <uml:hasStereotype rdf:resource="http://langdale.com.au/2005/UML#concrete"/>
     <rdfs:subClassOf rdf:nodeID="Xd2X2e4eda5cXa3X17e7d4a3a25Xa3X-7ff2"/>
@@ -271,11 +281,6 @@
     <rdfs:subClassOf rdf:resource="http://iec.ch/TC57/2010/CIM-schema-cim15#PowerSystemResource"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="Xd2X2e4eda5cXa3X17e7d4a3a25Xa3X-7fcd">
-    <owl:allValuesFrom rdf:nodeID="Xd2X2e4eda5cXa3X17e7d4a3a25Xa3X-7fce"/>
-    <owl:onProperty rdf:resource="http://iec.ch/TC57/2010/CIM-schema-cim15#Equipment.normallyInService"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
   <rdf:Description rdf:about="#RegularTimePoint">
     <rdfs:subClassOf rdf:nodeID="Xd2X2e4eda5cXa3X17e7d4a3a25Xa3X-7fdf"/>
     <rdfs:subClassOf rdf:nodeID="Xd2X2e4eda5cXa3X17e7d4a3a25Xa3X-7fe0"/>
@@ -286,6 +291,11 @@
     <rdfs:subClassOf rdf:resource="#IdentifiedObject"/>
     <rdfs:subClassOf rdf:resource="http://iec.ch/TC57/2010/CIM-schema-cim15#RegularTimePoint"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Xd2X2e4eda5cXa3X17e7d4a3a25Xa3X-7fcd">
+    <owl:allValuesFrom rdf:nodeID="Xd2X2e4eda5cXa3X17e7d4a3a25Xa3X-7fce"/>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/2010/CIM-schema-cim15#Equipment.normallyInService"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="Xd2X2e4eda5cXa3X17e7d4a3a25Xa3X-7fc2">
     <rdfs:label>switchOnDate</rdfs:label>
@@ -309,6 +319,11 @@
   </rdf:Description>
   <rdf:Description rdf:about="#PhaseCode">
     <rdfs:subClassOf rdf:resource="http://iec.ch/TC57/2010/CIM-schema-cim15#PhaseCode"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X43X9a65175Xa3X17e86535542Xa3X-7fff">
+    <rdfs:label>CurrentFlow</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://iec.ch/TC57/2010/CIM-schema-cim15#CurrentFlow"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="Xd2X2e4eda5cXa3X17e7d4a3a25Xa3X-7fac">
@@ -426,6 +441,10 @@
     <rdfs:subClassOf rdf:resource="#IdentifiedObject"/>
     <rdfs:subClassOf rdf:resource="http://iec.ch/TC57/2010/CIM-schema-cim15#DayType"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="X43X9a65175Xa3X17e86535542Xa3X-7ffe">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="X43X9a65175Xa3X17e86535542Xa3X-7fff"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://langdale.com.au/2007/Buildlet#html">
     <rdf:type rdf:resource="http://langdale.com.au/2005/Message#Flag"/>
