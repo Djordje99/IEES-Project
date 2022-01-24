@@ -126,4 +126,15 @@
 		<cim:IdentifiedObject.name>SS_001_name</cim:IdentifiedObject.name>
 	</cim:SwitchSchedule>
 	
+	<cim:SwitchSchedule rdf:ID="SS_002">
+		<cim:SwitchSchedule.Switch rdf:resource="Breaker_001"/>
+		<cim:SeasonDayTypeSchedule.DayType rdf:resource="DayType_002"/>
+		<cim:SeasonDayTypeSchedule.Season rdf:resource="Season_002"/>
+		<cim:BasicIntervalSchedule.startTime>2021-06-13T13:45:30.0900000</cim:BasicIntervalSchedule.startTime>
+		<cim:BasicIntervalSchedule.value1Unit>A</cim:BasicIntervalSchedule.value1Unit>
+		<cim:IdentifiedObject.aliasName>SS_002_aliasName</cim:IdentifiedObject.aliasName>
+		<cim:IdentifiedObject.mRID>SS_002_mRID</cim:IdentifiedObject.mRID>
+		<cim:IdentifiedObject.name>SS_002_name</cim:IdentifiedObject.name>
+	</cim:SwitchSchedule>
+	
 </rdf:RDF>
