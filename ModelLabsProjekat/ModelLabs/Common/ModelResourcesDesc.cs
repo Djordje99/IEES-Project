@@ -866,13 +866,13 @@ namespace FTN.Common
 
 		private void InitializeTypeIdsInInsertOrder()
 		{			
-			typeIdsInInsertOrder.Add(ModelCode.RTP);
 			typeIdsInInsertOrder.Add(ModelCode.DAYTYPE);
 			typeIdsInInsertOrder.Add(ModelCode.SEASON);
 			typeIdsInInsertOrder.Add(ModelCode.BREAKER);
 			typeIdsInInsertOrder.Add(ModelCode.SWITCHSCHEDULE);
 			typeIdsInInsertOrder.Add(ModelCode.REGCONTROL);
 			typeIdsInInsertOrder.Add(ModelCode.REGSCHEDULE);
+			typeIdsInInsertOrder.Add(ModelCode.RTP);
 		}
 
 		private void InitializeNotSettablePropertyIds()

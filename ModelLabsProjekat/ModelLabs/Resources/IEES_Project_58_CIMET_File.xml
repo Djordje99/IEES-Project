@@ -2,33 +2,7 @@
 <rdf:RDF	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 	xmlns:cim="http://iec.ch/TC57/2010/CIM-schema-cim15#"
 	xmlns:ftn="http://www.ftnydro.com/CIM15/2010/extension#">
-	
-	<!--RegularTimePoint-->
-	<cim:RegularTimePoint rdf:ID="RTP_001">
-		<cim:RegularTimePoint.sequenceNumber>3</cim:RegularTimePoint.sequenceNumber>
-		<cim:RegularTimePoint.value1>4.1</cim:RegularTimePoint.value1>
-		<cim:RegularTimePoint.value2>2.5</cim:RegularTimePoint.value2>
-		<cim:IdentifiedObject.aliasName>RTP_001_aliasName</cim:IdentifiedObject.aliasName>
-		<cim:IdentifiedObject.mRID>RTP_001_mRID</cim:IdentifiedObject.mRID>
-		<cim:IdentifiedObject.name>RTP_001_name</cim:IdentifiedObject.name>
-	</cim:RegularTimePoint>
-	<cim:RegularTimePoint rdf:ID="RTP_002">
-		<cim:RegularTimePoint.sequenceNumber>4</cim:RegularTimePoint.sequenceNumber>
-		<cim:RegularTimePoint.value1>2.6</cim:RegularTimePoint.value1>
-		<cim:RegularTimePoint.value2>7.3</cim:RegularTimePoint.value2>
-		<cim:IdentifiedObject.aliasName>RTP_002_aliasName</cim:IdentifiedObject.aliasName>
-		<cim:IdentifiedObject.mRID>RTP_002_mRID</cim:IdentifiedObject.mRID>
-		<cim:IdentifiedObject.name>RTP_002_name</cim:IdentifiedObject.name>
-	</cim:RegularTimePoint>
-	<cim:RegularTimePoint rdf:ID="RTP_003">
-		<cim:RegularTimePoint.sequenceNumber>6</cim:RegularTimePoint.sequenceNumber>
-		<cim:RegularTimePoint.value1>1.2</cim:RegularTimePoint.value1>
-		<cim:RegularTimePoint.value2>4.7</cim:RegularTimePoint.value2>
-		<cim:IdentifiedObject.aliasName>RTP_003_aliasName</cim:IdentifiedObject.aliasName>
-		<cim:IdentifiedObject.mRID>RTP_003_mRID</cim:IdentifiedObject.mRID>
-		<cim:IdentifiedObject.name>RTP_003_name</cim:IdentifiedObject.name>
-	</cim:RegularTimePoint>
-	
+
 	<!--DayType-->
 	<cim:DayType rdf:ID="DayType_001">
 		<cim:IdentifiedObject.aliasName>DayType_001_aliasName</cim:IdentifiedObject.aliasName>
@@ -113,6 +87,16 @@
 		<cim:IdentifiedObject.mRID>RS_001_mRID</cim:IdentifiedObject.mRID>
 		<cim:IdentifiedObject.name>RS_001_name</cim:IdentifiedObject.name>
 	</cim:RegulationSchedule>
+	<cim:RegulationSchedule rdf:ID="RS_002">
+		<cim:RegulationSchedule.RegulatingControl rdf:resource="RC_001"/>
+		<cim:SeasonDayTypeSchedule.DayType rdf:resource="DayType_002"/>
+		<cim:SeasonDayTypeSchedule.Season rdf:resource="Season_002"/>
+		<cim:BasicIntervalSchedule.startTime>2021-06-13T13:45:30.0900000</cim:BasicIntervalSchedule.startTime>
+		<cim:BasicIntervalSchedule.value1Unit>VArh</cim:BasicIntervalSchedule.value1Unit>
+		<cim:IdentifiedObject.aliasName>RS_002_aliasName</cim:IdentifiedObject.aliasName>
+		<cim:IdentifiedObject.mRID>RS_002_mRID</cim:IdentifiedObject.mRID>
+		<cim:IdentifiedObject.name>RS_002_name</cim:IdentifiedObject.name>
+	</cim:RegulationSchedule>
 
 	<!--SwitchSchedule-->
 	<cim:SwitchSchedule rdf:ID="SS_001">
@@ -136,5 +120,34 @@
 		<cim:IdentifiedObject.mRID>SS_002_mRID</cim:IdentifiedObject.mRID>
 		<cim:IdentifiedObject.name>SS_002_name</cim:IdentifiedObject.name>
 	</cim:SwitchSchedule>
+	
+	<!--RegularTimePoint-->
+	<cim:RegularTimePoint rdf:ID="RTP_001">
+		<cim:RegularTimePoint.IntervalSchedule rdf:resource="SS_001"/>
+		<cim:RegularTimePoint.sequenceNumber>3</cim:RegularTimePoint.sequenceNumber>
+		<cim:RegularTimePoint.value1>4.1</cim:RegularTimePoint.value1>
+		<cim:RegularTimePoint.value2>2.5</cim:RegularTimePoint.value2>
+		<cim:IdentifiedObject.aliasName>RTP_001_aliasName</cim:IdentifiedObject.aliasName>
+		<cim:IdentifiedObject.mRID>RTP_001_mRID</cim:IdentifiedObject.mRID>
+		<cim:IdentifiedObject.name>RTP_001_name</cim:IdentifiedObject.name>
+	</cim:RegularTimePoint>
+	<cim:RegularTimePoint rdf:ID="RTP_002">
+		<cim:RegularTimePoint.IntervalSchedule rdf:resource="SS_001"/>
+		<cim:RegularTimePoint.sequenceNumber>4</cim:RegularTimePoint.sequenceNumber>
+		<cim:RegularTimePoint.value1>2.6</cim:RegularTimePoint.value1>
+		<cim:RegularTimePoint.value2>7.3</cim:RegularTimePoint.value2>
+		<cim:IdentifiedObject.aliasName>RTP_002_aliasName</cim:IdentifiedObject.aliasName>
+		<cim:IdentifiedObject.mRID>RTP_002_mRID</cim:IdentifiedObject.mRID>
+		<cim:IdentifiedObject.name>RTP_002_name</cim:IdentifiedObject.name>
+	</cim:RegularTimePoint>
+	<cim:RegularTimePoint rdf:ID="RTP_003">
+		<cim:RegularTimePoint.IntervalSchedule rdf:resource="SS_001"/>
+		<cim:RegularTimePoint.sequenceNumber>6</cim:RegularTimePoint.sequenceNumber>
+		<cim:RegularTimePoint.value1>1.2</cim:RegularTimePoint.value1>
+		<cim:RegularTimePoint.value2>4.7</cim:RegularTimePoint.value2>
+		<cim:IdentifiedObject.aliasName>RTP_003_aliasName</cim:IdentifiedObject.aliasName>
+		<cim:IdentifiedObject.mRID>RTP_003_mRID</cim:IdentifiedObject.mRID>
+		<cim:IdentifiedObject.name>RTP_003_name</cim:IdentifiedObject.name>
+	</cim:RegularTimePoint>
 	
 </rdf:RDF>

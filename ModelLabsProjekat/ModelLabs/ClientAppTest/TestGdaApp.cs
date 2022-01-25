@@ -11,7 +11,7 @@ using System.Threading;
 using System.Diagnostics;
 using FTN.Common;
 using FTN.ServiceContracts;
-
+using System.Collections;
 
 namespace ClientAppTest
 {
@@ -312,6 +312,63 @@ namespace ClientAppTest
 			return resultIds;
 		}
 
+        public List<long> GetRelatedValues(long sourceGlobalId, Association association, List<ModelCode> properties)
+        {
+            string message = "Getting related values method started.";
+            Console.WriteLine(message);
+            CommonTrace.WriteTrace(CommonTrace.TraceError, message);
+
+            List<long> resultIds = new List<long>();
+
+
+            XmlTextWriter xmlWriter = null;
+            int numberOfResources = 2;
+
+            try
+            {
+                int iteratorId = GdaQueryProxy.GetRelatedValues(sourceGlobalId, properties, association);
+                int resourcesLeft = GdaQueryProxy.IteratorResourcesLeft(iteratorId);
+
+                xmlWriter = new XmlTextWriter(Config.Instance.ResultDirecotry + "\\GetRelatedValues_Results.xml", Encoding.Unicode);
+                xmlWriter.Formatting = Formatting.Indented;
+
+                while (resourcesLeft > 0)
+                {
+                    List<ResourceDescription> rds = GdaQueryProxy.IteratorNext(numberOfResources, iteratorId);
+
+                    for (int i = 0; i < rds.Count; i++)
+                    {
+                        resultIds.Add(rds[i].Id);
+                        rds[i].ExportToXml(xmlWriter);
+                        xmlWriter.Flush();
+                    }
+
+                    resourcesLeft = GdaQueryProxy.IteratorResourcesLeft(iteratorId);
+                }
+
+                GdaQueryProxy.IteratorClose(iteratorId);
+
+                message = "Getting related values method successfully finished.";
+                Console.WriteLine(message);
+                CommonTrace.WriteTrace(CommonTrace.TraceError, message);
+            }
+            catch (Exception e)
+            {
+                message = string.Format("Getting related values method  failed for sourceGlobalId = {0} and association (propertyId = {1}, type = {2}). Reason: {3}", sourceGlobalId, association.PropertyId, association.Type, e.Message);
+                Console.WriteLine(message);
+                CommonTrace.WriteTrace(CommonTrace.TraceError, message);
+            }
+            finally
+            {
+                if (xmlWriter != null)
+                {
+                    xmlWriter.Close();
+                }
+            }
+
+            return resultIds;
+        }
+
         public Dictionary<string, string> GetGIDValues()
         {
             int iteratorId = 0;
@@ -419,6 +476,32 @@ namespace ClientAppTest
                 foreach (var prop in properties)
                 {
                     if (!ids.Contains(prop.ToString()))
+                        ids.Add(prop.ToString());
+                }
+            }
+            catch (Exception e)
+            {
+                string message = string.Format("Getting ModelCode values method failed.\n\t{0}", e.Message);
+                Console.WriteLine(message);
+                CommonTrace.WriteTrace(CommonTrace.TraceError, message);
+            }
+
+            return ids;
+        }
+
+        public List<string> GetReferencesForGID(long gid)
+        {
+            List<string> ids = new List<string>();
+
+            try
+            {
+                List<ModelCode> properties = modelResourcesDesc.GetAllPropertyIdsForEntityId(gid);
+
+                foreach (var prop in properties)
+                {
+                    char[] chars = ((long)prop).ToString("X").ToCharArray();
+
+                    if (chars[15] == '9')
                         ids.Add(prop.ToString());
                 }
             }

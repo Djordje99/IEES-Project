@@ -97,7 +97,7 @@
                 }
                 if (cimBasicIntervalSchedule.Value1UnitHasValue)
                 {
-					rd.AddProperty(new Property(ModelCode.BIS_VALUE1UNIT, (short)cimBasicIntervalSchedule.Value1Unit));
+					rd.AddProperty(new Property(ModelCode.BIS_VALUE1UNIT, (short)GetDMSUnitSymbol(cimBasicIntervalSchedule.Value1Unit)));
                 }
 			}
 		}
