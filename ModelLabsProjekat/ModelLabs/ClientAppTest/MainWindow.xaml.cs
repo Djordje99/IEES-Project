@@ -297,23 +297,68 @@ namespace ClientAppTest
             string valueMethod = (string)ComboBoxMethod.SelectedItem;
             MethodEnum.Methods method = MethodEnum.GetMethodEnum(valueMethod);
 
+            List<string> classes = new List<string>();
+
             if (MethodEnum.Methods.GetRelatedVlaues.Equals(method))
             {
-                List<string> concreteClasses = new List<string>
+                //List<string> concreteClasses = new List<string>
+                //        {
+                //        "NONE",
+                //        "RTP",
+                //        "DAYTYPE",
+                //        "SEASON",
+                //        "BREAKER",
+                //        "SWITCHSCHEDULE",
+                //        "REGCONTROL",
+                //        "REGSCHEDULE"
+                //        };
+
+                string refValue = (string)ComboBox3.SelectedItem;
+                string gidValue = (string)ComboBox2.SelectedItem;
+                ResourceDescription rdRef = new ResourceDescription();
+
+                if (refValue == "" || gidValue == "")
+                    return;
+
+                ResourceDescription rd = testGdaApp.GetValues(long.Parse(gidValue.Split('-')[0]));
+
+                foreach (var item in rd.Properties)
+                {
+                    if(item.Id.ToString() == refValue)
+                    {
+                        if (item.Type == PropertyType.Reference)
                         {
-                        "NONE",
-                        "RTP",
-                        "DAYTYPE",
-                        "SEASON",
-                        "BREAKER",
-                        "SWITCHSCHEDULE",
-                        "REGCONTROL",
-                        "REGSCHEDULE"
-                        };
+                            rdRef = testGdaApp.GetValues(item.AsReference());
+                            foreach (var refItem in rdRef.Properties)
+                            {
+                                if (!classes.Contains(refItem.Id.ToString().Split('_')[0]))
+                                {
+                                    classes.Add(refItem.Id.ToString().Split('_')[0]);
+                                }
+                            }
 
-                List<string> modelCodeStrings = concreteClasses;
+                        }
+                        if (item.Type == PropertyType.ReferenceVector && item.AsReferences().Count > 0)
+                        {
+                            foreach (var refItem in item.AsReferences())
+                            {
+                                rdRef = testGdaApp.GetValues(refItem);
 
-                ComboBox4.ItemsSource = modelCodeStrings;
+                                foreach (var refItem1 in rdRef.Properties)
+                                {
+                                    if (!classes.Contains(refItem1.Id.ToString().Split('_')[0]))
+                                    {
+                                        classes.Add(refItem1.Id.ToString().Split('_')[0]);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                classes.Add("NONE");
+
+                ComboBox4.ItemsSource = classes;
             }
         }
 
@@ -328,14 +373,17 @@ namespace ClientAppTest
 
                 string type = (string)ComboBox4.SelectedItem;
 
+
                 if(type == "NONE")
                 {
-                    //modelCodes = testGdaApp.GetModelCodes();
-                    
+                    //modelCodes = testGdaApp.GetModelCodesForEntity();
+
                     modelCodes.Add("IDOBJ_GID");
                     modelCodes.Add("IDOBJ_ALIASNAME");
                     modelCodes.Add("IDOBJ_MRID");
                     modelCodes.Add("IDOBJ_NAME");
+
+                    ListBoxProp.ItemsSource = modelCodes;
 
                 }
                 else
@@ -344,9 +392,10 @@ namespace ClientAppTest
                     ModelCode.TryParse(type, out model);
 
                     modelCodes = testGdaApp.GetModelCodesForEntity(model);
-                }
 
-                ListBoxProp.ItemsSource = modelCodes;
+                    //ListBoxProp.ItemsSource = modelCodes.FindAll(x => x.ToString().Split('_')[0] == type);
+                    ListBoxProp.ItemsSource = modelCodes;
+                }
             }
         }
 
@@ -538,6 +587,9 @@ namespace ClientAppTest
                         string gidValue = ((string)ComboBox2.SelectedItem).Split('-')[0];
                         long gid = long.Parse(gidValue);
 
+                        List<ModelCode> abstractclasses = new List<ModelCode>() { ModelCode.IDOBJ, ModelCode.BIS, ModelCode.RIS, ModelCode.SDTS, ModelCode.PSR,
+                            ModelCode.EQUIPMENT, ModelCode.CONDEQ, ModelCode.SWITCH, ModelCode.PROTECTEDSWITCH};
+
                         string propertyID = (string)ComboBox3.SelectedItem;
                         ModelCode modelPropID;
                         Enum.TryParse(propertyID, out modelPropID);
@@ -562,7 +614,11 @@ namespace ClientAppTest
 
                         Association association = new Association();
                         association.PropertyId = modelPropID;
-                        association.Type = modelType;
+
+                        if (abstractclasses.Contains(modelType))
+                            association.Type = 0;
+                        else
+                            association.Type = modelType;
 
                         ids = testGdaApp.GetRelatedValues(gid, association, models);
 
